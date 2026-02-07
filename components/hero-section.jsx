@@ -41,7 +41,7 @@ export function HeroSection() {
           }`}
         >
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#A0BBCE]">
-            Hello, it's
+            Hello, I'm
           </p>
           <h1 className="mb-6 font-serif text-5xl font-light leading-tight text-white md:text-7xl lg:text-8xl">
             Edina

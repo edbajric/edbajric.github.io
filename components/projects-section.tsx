@@ -16,6 +16,7 @@ interface Project {
 interface ProjectCardProps {
   project: Project
   isVisible: boolean
+  delay: number
 }
 
 /* ---------------- Data ---------------- */
@@ -73,14 +74,17 @@ const projects: Project[] = [
 
 /* ---------------- Card ---------------- */
 
-function ProjectCard({ project, isVisible }: ProjectCardProps) {
+function ProjectCard({ project, isVisible, delay }: ProjectCardProps) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-lg bg-[#435E66]/50 p-6
-        transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]
-        hover:-translate-y-2 hover:bg-[#30464C]/70
+      className={`group relative overflow-hidden rounded-lg border border-[#6FA2D4]/30 bg-[#56727B]/30 p-6
+        transition-all duration-1000 ease-out
+        hover:border-[#6FA2D4]/60 hover:bg-[#56727B]/50
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}
       `}
+      style={{
+        transitionDelay: isVisible ? `${delay}ms` : "0ms",
+      }}
     >
       {/* gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#30464C]/0 to-[#30464C]/10 opacity-0 transition-opacity duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100" />
@@ -146,7 +150,7 @@ export function ProjectsSection() {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative bg-[#5A757D] px-6 py-24 md:px-12 md:py-32 lg:px-24"
+      className="relative bg-[#435E66] px-6 py-24 md:px-12 md:py-32 lg:px-24"
     >
       <div className="mx-auto max-w-6xl">
         <div
@@ -163,11 +167,12 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
               project={project}
               isVisible={isVisible}
+              delay={index * 150}
             />
           ))}
         </div>

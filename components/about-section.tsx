@@ -40,19 +40,7 @@ export function AboutSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          <div className="space-y-6">
-            <p className="text-[#A4ADAE] text-lg leading-relaxed">
-              I'm a senior Computer Science and Engineering student with hands-on experience in machine learning, computer vision, robotics, and full-stack web development. My work is driven by a core belief: gaining knowledge is a responsibility, and great work comes from using that knowledge to solve problems that matter.
-            </p>
-            <p className="text-[#A4ADAE] text-lg leading-relaxed italic">
-              "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do."
-              <br />
-              — Steve Jobs
-            </p>
-            <p className="text-[#A4ADAE] text-lg leading-relaxed">
-              For me, great work means using the knowledge and opportunities I have to create something useful, meaningful, and grounded in real needs. Not defined by titles or outcomes alone—but by whether it contributes positively to others and reflects genuine commitment to learning.
-            </p>
-          </div>
+          
 
           <div className="grid sm:grid-cols-2 gap-6">
             {focusAreas.map((area) => (

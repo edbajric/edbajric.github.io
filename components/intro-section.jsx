@@ -26,10 +26,10 @@ export function IntroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#5A757D] px-6 py-24 md:px-12 md:py-32 lg:px-24 lg:py-40"
+      className="relative bg-[#435E66] px-6 py-24 md:px-12 md:py-32 lg:px-24 lg:py-40"
     >
       {/* Subtle water-inspired gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#435E66]/20 via-transparent to-[#56727B]/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#56727B]/20 via-transparent to-[#435E66]/30" />
 
       <div className="relative z-10 mx-auto max-w-4xl">
         <div
