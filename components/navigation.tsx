@@ -41,14 +41,14 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <nav className="px-6 md:px-12 lg:px-24 py-4 flex items-center justify-between">
+      <nav className="px-6 md:px-9 lg:px-24 py-4 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
-          className="text-[#9FC8F2] font-light text-xl font-serif hover:text-[#E6F1FF]"
-          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.4)" }}
+          className="text-[#FFF] font-light text-3xl hover:text-[#E6F1FF]"
+          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.4)", fontFamily: "var(--font-instrument-serif), serif" }}
         >
-          &lt; edbajric /&gt;
+          &lt; EDBAJRIC /&gt;
         </a>
 
         {/* Desktop Navigation */}
@@ -58,7 +58,8 @@ export function Navigation() {
               <a
                 href={link.href}
                 onClick={handleNavClick}
-                className="text-[#ECF7FA] hover:text-[#E6F1FF] transition-colors text-sm font-serif"
+                className="text-[#ECF7FA] hover:text-[#E6F1FF] transition-colors text-sm"
+                style={{ fontFamily: "var(--font-instrument-serif), serif" }}
               >
                 {link.name}
               </a>
@@ -85,7 +86,8 @@ export function Navigation() {
                 <a
                   href={link.href}
                   onClick={handleNavClick}
-                  className="text-[#E6F1FF] hover:text-[#9FC8F2] transition-colors text-lg font-serif"
+                  className="text-[#E6F1FF] hover:text-[#9FC8F2] transition-colors text-lg"
+                  style={{ fontFamily: "var(--font-instrument-serif), serif" }}
                 >
                   {link.name}
                 </a>
