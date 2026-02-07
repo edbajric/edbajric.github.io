@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Cormorant_Garamond, Bodoni_Moda, Stint_Ultra_Condensed, Instrument_Serif, Inter } from 'next/font/google'
+import { Playfair_Display, Cormorant_Garamond, Bodoni_Moda, Stint_Ultra_Condensed, Instrument_Serif, Inter, Indie_Flower } from 'next/font/google'
 import { Navigation } from '@/components/navigation'
 import './globals.css'
 
@@ -37,6 +37,14 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
+const indieFlower = Indie_Flower({
+  subsets: ['latin'],
+  weight: '400',
+  variable: "--font-indie-flower",
+
+});
+
+
 export const metadata: Metadata = {
   title: 'Edina Bajric Portfolio',
   description: 'Building at the intersection of engineering, AI, and human-centered design. Transforming complex problems into elegant solutions.',
@@ -60,20 +68,21 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ 
-  children, 
-}: { 
-  children: React.ReactNode 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${bodoniModa.variable} ${stintUltraCondensed.variable} ${instrumentSerif.variable} ${inter.variable} font-sans antialiased`}
+        className={`${playfair.variable} ${cormorant.variable} ${bodoniModa.variable} ${stintUltraCondensed.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <Navigation />
         {children}
       </body>
     </html>
-  )
+  );
 }
+
