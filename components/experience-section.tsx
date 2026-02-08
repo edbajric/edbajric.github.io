@@ -10,29 +10,25 @@ const experiences = [
       "Spatial object recognition & 3D reconstruction with Python",
       "Vision Language Models (VLA) research for robotic perception",
     ],
-  },
-  {
-    title: "Founder & President",
-    organization: "Robotics Club (FENSy Solutions) at IUS",
-    period: "2024 — Present",
-    description:
-      "Founded and leading a team of engineers to design and build autonomous robots for national competitions.",
-    highlights: [
-      "Established Robotics Club to foster peer-to-peer STEM education",
-      "Mentored team on Hand Gesture Controlled Robot project design & integration",
-    ],
-  },
+  }
 ];
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="relative bg-[#435E66] px-6 py-24 md:px-12 md:py-32 lg:px-24">
+    <section
+      id="experience"
+      className="relative bg-[#435E66] px-6 py-24 md:px-12 md:py-32 lg:px-24"
+      style={{ fontFamily: "var(--font-indie-flower)" }}
+    >
       <div className="mx-auto max-w-6xl">
         <div className="mb-16">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#6FA2D4]">
             My Journey
           </p>
-          <h2 className="font-serif text-4xl font-light text-white md:text-5xl">
+          <h2
+            className="text-4xl font-light text-white md:text-5xl"
+            style={{ fontFamily: "var(--font-instrument-serif), serif" }}
+          >
             Experience & Leadership
           </h2>
         </div>
@@ -43,11 +39,14 @@ export function ExperienceSection() {
               <div className="absolute left-0 top-0 w-3 h-3 -translate-x-1.5 bg-[#7AA8D4] rounded-full" />
               <div className="space-y-3">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <h3 className="text-lg font-serif font-light text-white">
+                  <h3
+                    className="text-lg font-light text-white"
+                    style={{ fontFamily: "var(--font-instrument-serif), serif" }}
+                  >
                     {exp.title}{" "}
                     <span className="text-[#7AA8D4]">@ {exp.organization}</span>
                   </h3>
-                  <span className="text-[#A0BBCE] font-mono text-sm">
+                  <span className="text-[#A0BBCE] text-sm">
                     {exp.period}
                   </span>
                 </div>

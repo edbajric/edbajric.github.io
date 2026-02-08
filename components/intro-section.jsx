@@ -17,8 +17,9 @@ export function IntroSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative bg-[#435E66] px-6 py-16 md:py-20 overflow-hidden">
-      <div className={`mx-auto max-w-7xl text-[#E8EEF2] transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+    <section ref={sectionRef} className="relative px-6 py-16 md:py-20 overflow-hidden isolate" style={{ backgroundImage: "url('/images/water.jpeg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+      <div className="absolute inset-0 bg-[#435E66] z-0"></div>
+      <div className={`mx-auto max-w-7xl text-[#E8EEF2] transition-all duration-1000 relative z-10 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
         
         <div className="grid grid-cols-1 md:grid-cols-12 items-start">
           
@@ -66,9 +67,13 @@ export function IntroSection() {
               Currently exploring AI, computer vision, and software engineering with a focus on work that is both rigorous and genuinely useful.
             </p>
 
-            <button className="mt-10 inline-flex rounded-full bg-[#6FA2D4] px-8 py-3 text-sm font-semibold uppercase tracking-wide text-[#0B1A24] transition-colors hover:bg-[#5A92C6]">
+            <button
+              className="group mt-10 inline-flex items-center gap-3 rounded-lg border border-[#6FA2D4]/50 bg-transparent px-23 py-4 text-sm text-white transition-all hover:border-[#6FA2D4]/80 mix-blend-multiply relative z-10 hover:mix-blend-normal"
+              style={{ fontFamily: "var(--font-indie-flower)" }}
+            >
               View Work
             </button>
+
           </div>
         </div>
 

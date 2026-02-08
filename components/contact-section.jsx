@@ -49,8 +49,17 @@ export function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative bg-[#435E66] px-6 py-24 md:px-12 md:py-32 lg:px-24"
+      className="relative px-6 py-24 md:px-12 md:py-32 lg:px-24 overflow-hidden"
+      style={{
+        fontFamily: "var(--font-indie-flower)",
+        backgroundImage: "url('/images/water.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed"
+      }}
     >
+      <div className="absolute inset-0 bg-[#435E66]/85" />
+      <div className="relative z-10">
       <div className="mx-auto max-w-4xl">
         <div
           className={`mb-16 text-center transition-all duration-1000 ease-out ${
@@ -81,7 +90,7 @@ export function ContactSection() {
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-3 rounded-lg border border-[#6FA2D4]/30 bg-[#56727B]/30 px-6 py-4 transition-all hover:border-[#6FA2D4]/60 hover:bg-[#56727B]/50"
+                className="group flex items-center gap-3 rounded-lg border border-[#6FA2D4]/50 bg-transparent backdrop-blur-md px-6 py-4 font-serif transition-all hover:border-[#6FA2D4]/80 hover:bg-[#56727B]/20"
               >
                 <Icon className="h-5 w-5 text-[#7AA8D4]" />
                 <div>
@@ -107,6 +116,7 @@ export function ContactSection() {
         <p className="mt-1 text-xs text-[#6B7573]/70">
           © 2026 All rights reserved
         </p>
+      </div>
       </div>
     </section>
   )

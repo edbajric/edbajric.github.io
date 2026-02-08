@@ -124,7 +124,10 @@ export function HeroSection() {
           }`}
         >
           
-          <div className="flex flex-wrap gap-4 justify-end">
+          <div
+            className="flex flex-wrap gap-4 justify-end"
+            style={{ fontFamily: "var(--font-indie-flower)" }}
+          >
             <button onClick={handleViewWork} className="inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-4 py-2 text-white hover:bg-[#6FA2D4]/20 hover:text-white transition-colors">
               View Work
               <ArrowDown className="ml-2 h-4 w-4" />
