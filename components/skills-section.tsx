@@ -1,38 +1,57 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+
 const skillCategories = [
   {
-    title: "Machine Learning",
-    skills: ["Data Engineering", "Feature Engineering", "Random Forest", "Gradient Boosting", "Cross-Validation", "Model Interpretability"]
-  },
-  {
-    title: "Programming & AI",
-    skills: ["Python", "C/C++", "JavaScript", "TypeScript", "Swift", "Java", "TensorFlow", "OpenCV", "MediaPipe"]
+    title: "Machine Learning & AI",
+    skills: ["Python", "TensorFlow", "OpenCV", "MediaPipe", "Data Engineering", "Feature Engineering", "Random Forest", "Gradient Boosting", "Cross-Validation", "Model Interpretability"]
   },
   {
     title: "Web Development",
-    skills: ["React.js", "Next.js", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "REST APIs", "JSON"]
+    skills: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express.js", "MySQL", "REST APIs", "JSON", "Java"]
   },
   {
     title: "Mobile Development",
-    skills: ["Swift", "SwiftUI", "Xcode", "Firebase", "Mobile Widgets"]
+    skills: ["Swift", "SwiftUI", "Xcode", "Firebase"]
   },
   {
     title: "Robotics & IoT",
-    skills: ["ROS2", "IsaacSim", "MQTT", "Raspberry Pi", "Arduino", "ESP32", "Node-RED", "Sensors/Actuators"]
+    skills: ["C/C++", "ROS2", "IsaacSim", "MQTT", "Raspberry Pi", "Arduino", "ESP32", "Node-RED", "Sensors/Actuators"]
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git/GitHub", "Agile/Scrum", "Linux/Unix", "VS Code", "Figma", "Canva", "LaTeX"]
+    skills: ["Git/GitHub", "Agile/Scrum", "VS Code", "Figma", "Canva", "LaTeX"]
   }
 ]
 
 export default function Skills() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true) },
+      { threshold: 0.2 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
       id="skills"
-      className="relative bg-[#435E66] px-6 pt-12 pb-8 md:px-12 md:pt-16 md:pb-10 lg:px-24"
-      style={{ fontFamily: "var(--font-indie-flower)" }}
+      ref={sectionRef}
+      className="relative bg-[#435E66] font-sans px-6 pt-12 pb-8 md:px-12 md:pt-16 md:pb-10 lg:px-24"
+      
     >
-      <div className="mx-auto max-w-6xl">
+      <div className={`mx-auto max-w-6xl transition-all duration-1000 ease-out ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+      }`}>
         {/* BROKEN TEXT MARQUEE - Full Screen Width */}
         <div className="mt-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee">
@@ -77,12 +96,12 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-30 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category) => (
             <div key={category.title} className="space-y-4">
               <h3
-                className="text-lg font-light text-white"
-                style={{ fontFamily: "var(--font-instrument-serif), serif" }}
+                className="text-2xl font-light text-white"
+                style={{ fontFamily: "var(--font-indie-flower)" }}
               >
                 {category.title}
               </h3>
@@ -90,7 +109,7 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1.5 text-sm bg-transparent backdrop-blur-md text-white rounded-md border border-[#7AA8D4]/50 hover:border-[#7AA8D4]/70 transition-colors"
+                    className="rounded-full bg-[#617b80]/30 px-3 py-1 text-xs text-[#E8F0F5]"
                   >
                     {skill}
                   </span>

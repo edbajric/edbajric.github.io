@@ -49,7 +49,7 @@ export function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative px-6 py-24 md:px-12 md:py-32 lg:px-24 overflow-hidden"
+      className="relative px-6 pt-35 pb-13 md:px-12 md:pt-40 md:pb-18 lg:px-24 overflow-hidden"
       style={{
         fontFamily: "var(--font-indie-flower)",
         backgroundImage: "url('/images/water.jpeg')",
@@ -73,7 +73,7 @@ export function ContactSection() {
             {"Connect via the "} <span className="text-[#7AA8D4]">links below</span>
           </h2>
           <p className="mx-auto max-w-xl text-[#A4ADAE]">
-            {"I'm"} currently exploring opportunities in AI/ML research, robotics engineering, and full-stack development. I'm open to collaborations, research roles, and interesting projects.
+            {"I'm"} currently exploring opportunities in AI/ML research and full-stack development. I'm open to collaborations, work, research roles, and interesting projects.
           </p>
         </div>
 
@@ -110,7 +110,7 @@ export function ContactSection() {
           isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
         }`}
       >
-        <p className="text-sm text-[#6B7573]">
+        <p className="text-sm text-[#A4ADAE]">
           Designed & Built by Edina Bajric
         </p>
         <p className="mt-1 text-xs text-[#6B7573]/70">

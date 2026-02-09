@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { Mail } from "lucide-react"
 
 export function IntroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -16,8 +17,16 @@ export function IntroSection() {
     return () => observer.disconnect()
   }, [])
 
+  const handleContactScroll = (e) => {
+    e.preventDefault()
+    const contactSection = document.getElementById("contact")
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
-    <section ref={sectionRef} className="relative px-6 py-16 md:py-20 overflow-hidden isolate" style={{ backgroundImage: "url('/images/water.jpeg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+    <section id="intro" ref={sectionRef} className="relative px-6 py-16 md:py-20 overflow-hidden isolate" style={{ backgroundImage: "url('/images/water.jpeg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
       <div className="absolute inset-0 bg-[#435E66] z-0"></div>
       <div className={`mx-auto max-w-7xl text-[#E8EEF2] transition-all duration-1000 relative z-10 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
         
@@ -51,10 +60,10 @@ export function IntroSection() {
             <p className="text-xs uppercase tracking-[0.2em] text-[#D7E4EC] md:text-sm max-w-[300px] font-sans font-light leading-relaxed">
               I SEE LEARNING AS A RESPONSIBILITY TO CREATE MEANINGFUL SOLUTIONS THAT HELP PEOPLE AND COMMUNITIES.
             </p>
-            
-            <div className="w-full flex justify-end pr-12 mt-12"> 
+
+            <div className="w-full flex justify-end pr-12 mt-12">
               <div className="relative aspect-[3/4] w-full max-w-[320px] md:max-w-[360px] shadow-2xl">
-                 <Image src="/images/IMG_0222.png" alt="Profile image" fill className="object-cover" />
+                <Image src="/images/IMG_0222.png" alt="Profile image" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -62,17 +71,20 @@ export function IntroSection() {
           {/* Right Side */}
           <div className="col-span-full md:col-start-7 md:col-span-6 flex flex-col items-start text-left pt-8 md:pl-10 md:row-start-3">
             <p className="text-sm md:text-base max-w-[300px]" style={{ fontFamily: "var(--font-indie-flower)" }}>
-              I build ML models for practical problems, develop robotics systems, and craft full-stack apps that turn complex ideas into useful products.
+              I'm interested in building ML models for practical problems, and crafting full-stack apps that turn complex ideas into useful products.
               <br /><br />
-              Currently exploring AI, computer vision, and software engineering with a focus on work that is both rigorous and genuinely useful.
+              Currently exploring AI, machine learning, and software engineering with a focus on work that is genuinely useful.
             </p>
 
-            <button
-              className="group mt-10 inline-flex items-center gap-3 rounded-lg border border-[#6FA2D4]/50 bg-transparent px-23 py-4 text-sm text-white transition-all hover:border-[#6FA2D4]/80 mix-blend-multiply relative z-10 hover:mix-blend-normal"
+            <a
+              href="#contact"
+              onClick={handleContactScroll}
+              className="mt-10 inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-25 py-2 text-white transition-colors hover:bg-[#6FA2D4]/20 hover:text-white"
               style={{ fontFamily: "var(--font-indie-flower)" }}
             >
-              View Work
-            </button>
+              <Mail className="mr-2 h-4 w-4" />
+              Contact
+            </a>
 
           </div>
         </div>

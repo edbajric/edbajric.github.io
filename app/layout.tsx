@@ -50,21 +50,8 @@ export const metadata: Metadata = {
   description: 'Building at the intersection of engineering, AI, and human-centered design. Transforming complex problems into elegant solutions.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/EB.png',
+    apple: '/EB.png',
   },
 }
 
@@ -76,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${bodoniModa.variable} ${stintUltraCondensed.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased`}
+        className={`${playfair.variable} ${cormorant.variable} ${bodoniModa.variable} ${stintUltraCondensed.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
         <Navigation />

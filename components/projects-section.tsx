@@ -38,7 +38,7 @@ const projects: Project[] = [
   {
     title: "edbajric.github.io Portfolio",
     description:
-      "Designed and built a personal portfolio site in Next.js with a custom component system, motion-based UI, and responsive layouts tailored for showcasing projects and experience.",
+      "This portfolio site was designed and built by me in Next.js with a custom component system, motion-based UI.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX"],
     github: "https://github.com/edbajric/edbajric.github.io",
   },
@@ -52,14 +52,14 @@ const projects: Project[] = [
   {
     title: "Dinero",
     description:
-      "Built a full-stack web application focused on modern UI/UX, authentication, and data-driven workflows for personal finance management.",
+      "Built a full-stack web application focused on modern UI/UX, authentication, and data-driven workflows as a restaurant reservation system.",
     tags: ["React.js", "Next.js", "Node.js", "JavaScript", "MySQL"],
     github: "https://github.com/Adnan-M123/Dinero",
   },
   {
     title: "IUS Mahala – Student Communication Platform",
     description:
-      "Built a React.js and Node.js social platform streamlining academic resource sharing and faculty-based discussion groups. Designed an intuitive, responsive interface that facilitated peer-to-peer learning and improved information exchange across the university.",
+      "Built a React.js and Node.js social platform for my university for sharing academic resources and faculty-based discussion groups.",
     tags: ["React.js", "Node.js", "Tailwind CSS", "MySQL"],
     github: "https://github.com/edbajric/ius-mahala",
   },
@@ -83,11 +83,11 @@ function ProjectCard({ project, isVisible, delay }: ProjectCardProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-[#30464C]/0 to-[#30464C]/10 opacity-0 transition-opacity duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100" />
 
       <div className="relative z-10 flex h-full flex-col">
-        <h3 className="mb-3 font-serif text-2xl font-light text-white">
+        <h3 className="mb-3 text-2xl font-light text-white" style={{ fontFamily: "var(--font-indie-flower)" }}>
           {project.title}
         </h3>
 
-        <p className="mb-4 text-sm leading-relaxed text-[#A4ADAE]">
+        <p className="mb-4 text-sm font-sans leading-relaxed text-[#C7D1D6]">
           {project.description}
         </p>
 
@@ -95,7 +95,7 @@ function ProjectCard({ project, isVisible, delay }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-[#435E66]/60 px-3 py-1 text-xs text-[#A0BBCE]"
+              className="rounded-full bg-[#435E66]/60 px-3 py-1 text-xs text-[#C7D1D6]"
             >
               {tag}
             </span>
@@ -149,7 +149,9 @@ export function ProjectsSection() {
     >
       {/* Color overlay */}
       <div className="absolute inset-0 bg-[#435E66]/70" />
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className={`mx-auto max-w-6xl relative z-10 transition-all duration-1000 ease-out ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+      }`}>
       
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

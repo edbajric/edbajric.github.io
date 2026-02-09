@@ -64,7 +64,7 @@ export function HeroSection() {
         <div className={`absolute top-[40%] left-[30%] md:left-[23%] transition-all duration-1000 ease-out ${
             isVisible ? "translate-x-0 translate-y-0 opacity-100" : "translate-x-20 translate-y-10 opacity-0"
           }`}>
-          <p className="text-xs md:text-sm text-white uppercase tracking-wide absolute -top-7 -left-20 whitespace-nowrap" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
+          <p className="text-sm md:text-base text-white uppercase tracking-wide absolute -top-7 -left-20 whitespace-nowrap" style={{ fontFamily: "var(--font-indie-flower), cursive" }}>
             Computer Science student
           </p>
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
@@ -82,7 +82,7 @@ export function HeroSection() {
         <div className={`absolute top-[48%] right-[10%] md:right-[28%] text-right transition-all duration-1000 ease-out ${
             isVisible ? "translate-x-0 translate-y-0 opacity-100" : "-translate-x-20 translate-y-10 opacity-0"
           }`}>
-          <p className="text-xs md:text-sm text-white mt-[-10px] uppercase tracking-wide absolute -top-3 -right-20 whitespace-nowrap" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
+          <p className="text-sm md:text-base text-white mt-[-10px] uppercase tracking-wide absolute -top-3 -right-20 whitespace-nowrap" style={{ fontFamily: "var(--font-indie-flower), cursive" }}>
             Focused on AI & ML
           </p>
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none" style={{ transform: "scaleX(-1)" }}>
@@ -110,7 +110,7 @@ export function HeroSection() {
                     stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </g>
           </svg>
-         <p className="text-xs md:text-sm text-white uppercase tracking-wide whitespace-nowrap absolute  -left-20" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
+         <p className="text-sm md:text-base text-white uppercase tracking-wide whitespace-nowrap absolute  -left-20" style={{ fontFamily: "var(--font-indie-flower), cursive" }}>
             Web & app development
           </p>
         </div>
@@ -149,7 +149,7 @@ export function HeroSection() {
             >
               <a href="mailto:ebajric@student.ius.edu.ba" target="_blank" rel="noopener noreferrer">
                 <Mail className="mr-2 h-4 w-4" />
-                Contact
+                Email
               </a>
             </Button>
           </div>
