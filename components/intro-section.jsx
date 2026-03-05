@@ -50,7 +50,7 @@ export function IntroSection() {
           {/* 3. TITLE */}
           <div className="col-span-full md:col-start-1 md:col-span-12 text-center md:row-start-2">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-thin uppercase leading-tight tracking-wide" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
-                Computer science student,<br />focused on AI and ML
+                Computer science student,<br />focused on AI, ML & Web Dev
             </h2>
           </div>
 
