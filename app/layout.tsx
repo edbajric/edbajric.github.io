@@ -1,29 +1,11 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Cormorant_Garamond, Bodoni_Moda, Stint_Ultra_Condensed, Instrument_Serif, Inter, Indie_Flower } from 'next/font/google'
+import { Playfair_Display, Instrument_Serif, Inter, Indie_Flower } from 'next/font/google'
 import { Navigation } from '@/components/navigation'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
   variable: "--font-playfair",
-})
-
-const cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant-garamond",
-})
-
-const bodoniModa = Bodoni_Moda({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-bodoni-moda",
-})
-
-const stintUltraCondensed = Stint_Ultra_Condensed({ 
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-stint-ultra-condensed",
 })
 
 const instrumentSerif = Instrument_Serif({ 
@@ -63,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${bodoniModa.variable} ${stintUltraCondensed.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${playfair.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
         <Navigation />

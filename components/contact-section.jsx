@@ -1,14 +1,11 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react"
 
 const links = [
   {
     icon: Mail,
     label: "Email",
-    value: "ebajric@student.ius.edu.ba",
-    href: "mailto:ebajric@student.ius.edu.ba",
+    value: "edina.bajric@outlook.com",
+    href: "mailto:edina.bajric@outlook.com",
   },
   {
     icon: Github,
@@ -25,46 +22,22 @@ const links = [
 ]
 
 export function ContactSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="contact"
-      ref={sectionRef}
       className="relative px-6 pt-35 pb-13 md:px-12 md:pt-40 md:pb-18 lg:px-24 overflow-hidden"
       style={{
         fontFamily: "var(--font-indie-flower)",
         backgroundImage: "url('/images/water.jpeg')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed"
+        backgroundPosition: "center"
       }}
     >
       <div className="absolute inset-0 bg-[#435E66]/85" />
       <div className="relative z-10">
       <div className="mx-auto max-w-4xl">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ease-out ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
+          className="mb-16 text-center"
         >
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#6FA2D4]">
             Get In Touch
@@ -78,9 +51,7 @@ export function ContactSection() {
         </div>
 
         <div
-          className={`flex flex-col items-center gap-6 transition-all delay-200 duration-1000 ease-out md:flex-row md:justify-center ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
+          className="flex flex-col items-center gap-6 md:flex-row md:justify-center"
         >
           {links.map((link) => {
             const Icon = link.icon
@@ -106,9 +77,7 @@ export function ContactSection() {
 
       {/* Footer */}
       <div
-        className={`mt-24 border-t border-[#56727B]/50 pt-8 text-center transition-all delay-300 duration-1000 ease-out ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-        }`}
+        className="mt-24 border-t border-[#56727B]/50 pt-8 text-center"
       >
         <p className="text-sm text-[#A4ADAE]">
           Designed & Built by Edina Bajric

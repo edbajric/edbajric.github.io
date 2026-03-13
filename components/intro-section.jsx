@@ -26,7 +26,7 @@ export function IntroSection() {
   }
 
   return (
-    <section id="intro" ref={sectionRef} className="relative px-6 py-16 md:py-20 overflow-hidden isolate" style={{ backgroundImage: "url('/images/water.jpeg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+    <section id="intro" ref={sectionRef} className="relative px-6 py-16 md:py-20 overflow-hidden isolate" style={{ backgroundImage: "url('/images/water.jpeg')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="absolute inset-0 bg-[#435E66] z-0"></div>
       <div className={`mx-auto max-w-7xl text-[#E8EEF2] transition-all duration-1000 relative z-10 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
         
@@ -96,8 +96,7 @@ export function IntroSection() {
         <div className="mt-22 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee">
             
-            {/* Loop 10 times to ensure zero gaps on ultra-wide screens */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={i} className="relative px-4 md:px-8 flex-shrink-0 cursor-default select-none">
                 
                 {/* Top Half - Shifted Right */}
@@ -119,7 +118,7 @@ export function IntroSection() {
             ))}
 
             {/* Exact Duplicate for the Infinite Loop */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={`dup-${i}`} className="relative px-4 md:px-8 flex-shrink-0 cursor-default select-none" aria-hidden="true">
                 <h3 
                   className="text-5xl md:text-8xl lg:text-9xl font-thin italic uppercase tracking-tighter [clip-path:inset(0_0_50%_0)] translate-x-0.5 md:translate-x-1" 

@@ -1,7 +1,3 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
-
 const skillCategories = [
   {
     title: "Machine Learning & AI",
@@ -30,33 +26,17 @@ const skillCategories = [
 ]
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true) },
-      { threshold: 0.2 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="skills"
-      ref={sectionRef}
       className="relative bg-[#435E66] font-sans px-6 pt-12 pb-8 md:px-12 md:pt-16 md:pb-10 lg:px-24"
       
     >
-      <div className={`mx-auto max-w-6xl transition-all duration-1000 ease-out ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}>
+      <div className="mx-auto max-w-6xl">
         {/* BROKEN TEXT MARQUEE - Full Screen Width */}
         <div className="mt-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee">
-            {/* Loop 10 times to ensure zero gaps on ultra-wide screens */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={i} className="relative px-4 md:px-8 flex-shrink-0 cursor-default select-none">
                 {/* Top Half - Shifted Right */}
                 <h3
@@ -77,7 +57,7 @@ export default function Skills() {
             ))}
 
             {/* Exact Duplicate for the Infinite Loop */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={`dup-${i}`} className="relative px-4 md:px-8 flex-shrink-0 cursor-default select-none" aria-hidden="true">
                 <h3
                   className="text-5xl md:text-8xl lg:text-9xl font-thin italic uppercase tracking-tighter text-white [clip-path:inset(0_0_50%_0)] translate-x-0.5 md:translate-x-1"

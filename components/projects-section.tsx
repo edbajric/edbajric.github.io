@@ -1,6 +1,3 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
 import { Github } from "lucide-react"
 
 /* ---------------- Types ---------------- */
@@ -14,8 +11,6 @@ interface Project {
 
 interface ProjectCardProps {
   project: Project
-  isVisible: boolean
-  delay: number
 }
 
 /* ---------------- Data ---------------- */
@@ -67,17 +62,14 @@ const projects: Project[] = [
 
 /* ---------------- Card ---------------- */
 
-function ProjectCard({ project, isVisible, delay }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       className={`group relative overflow-hidden rounded-lg border border-[#6FA2D4]/30 bg-[#56727B]/10 backdrop-blur-sm p-6
-        transition-all duration-1000 ease-out
+        transition-all duration-500 ease-out
         hover:border-[#6FA2D4]/60 hover:bg-[#56727B]/20
-        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}
+        translate-y-0 opacity-100
       `}
-      style={{
-        transitionDelay: isVisible ? `${delay}ms` : "0ms",
-      }}
     >
       {/* gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#30464C]/0 to-[#30464C]/10 opacity-0 transition-opacity duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100" />
@@ -121,37 +113,20 @@ function ProjectCard({ project, isVisible, delay }: ProjectCardProps) {
 /* ---------------- Section ---------------- */
 
 export function ProjectsSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement | null>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setIsVisible(true),
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="projects"
-      ref={sectionRef}
       className="relative px-6 py-24 md:px-12 md:py-32 lg:px-24 overflow-hidden"
       style={{
         fontFamily: "var(--font-indie-flower)",
         backgroundImage: "url('/images/water.jpeg')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed"
+        backgroundPosition: "center"
       }}
     >
       {/* Color overlay */}
       <div className="absolute inset-0 bg-[#435E66]/70" />
-      <div className={`mx-auto max-w-6xl relative z-10 transition-all duration-1000 ease-out ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}>
+      <div className="mx-auto max-w-6xl relative z-10">
       
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -159,8 +134,6 @@ export function ProjectsSection() {
             <ProjectCard
               key={project.title}
               project={project}
-              isVisible={isVisible}
-              delay={index * 150}
             />
           ))}
         </div>

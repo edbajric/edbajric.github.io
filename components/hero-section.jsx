@@ -28,6 +28,7 @@ export function HeroSection() {
           src="/images/img-0064.jpeg"
           alt="Portrait by the ocean"
           fill
+          priority
           className="object-cover object-center"
         />
         {/* Bluish overlay for base image */}
@@ -47,15 +48,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Image Cut Overlay on Top */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <Image
-          src="/images/img-0064-cut.png"
-          alt="Overlay"
-          fill
-          className="object-cover object-center opacity-100"
-        />
-      </div>
+      {/* Lightweight overlays replacing a heavy 3.6MB cutout image */}
+      <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_78%_28%,rgba(255,255,255,0.18),transparent_36%),linear-gradient(to_top,rgba(27,40,47,0.28),transparent_42%)]" />
 
       {/* Curved Arrow Annotations */}
       <div className="absolute inset-0 z-25 pointer-events-none">
@@ -147,7 +141,7 @@ export function HeroSection() {
               className="border-[#6FA2D4]/40 bg-transparent text-white hover:bg-[#6FA2D4]/20 hover:text-white"
               asChild
             >
-              <a href="mailto:ebajric@student.ius.edu.ba" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:edina.bajric@outlook.com" target="_blank" rel="noopener noreferrer">
                 <Mail className="mr-2 h-4 w-4" />
                 Email
               </a>
