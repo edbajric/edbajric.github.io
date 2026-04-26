@@ -22,6 +22,9 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(111,162,212,0.18)_0%,transparent_60%),radial-gradient(ellipse_60%_50%_at_20%_80%,rgba(67,94,102,0.6)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(111,162,212,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(111,162,212,0.04)_1px,transparent_1px)] bg-[size:60px_60px] opacity-70" />
+
       {/* Base Hero Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -41,9 +44,11 @@ export function HeroSection() {
           className={`text-center transition-all duration-1000 ease-out ${
             isVisible ? "scale-100 opacity-100" : "scale-90 opacity-0"
           }`}
+          data-reveal
         >
           <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-normal leading-none tracking-normal text-white drop-shadow-2xl whitespace-nowrap uppercase" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
-            HI, <span className="italic normal-case">I'm</span> EDINA <span className="text-[#87AED6]"></span>
+            HI, <span className="italic normal-case">I'm</span>{" "}
+            <span className="glitch" data-text="EDINA">EDINA</span> <span className="text-[#87AED6]"></span>
           </h1>
         </div>
       </div>
@@ -121,14 +126,15 @@ export function HeroSection() {
           <div
             className="flex flex-wrap gap-4 justify-end"
             style={{ fontFamily: "var(--font-indie-flower)" }}
+            data-reveal="right"
           >
-            <button onClick={handleViewWork} className="inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-4 py-2 text-white hover:bg-[#6FA2D4]/20 hover:text-white transition-colors">
+            <button onClick={handleViewWork} className="fx-hover-target inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-4 py-2 text-white hover:bg-[#6FA2D4]/20 hover:text-white transition-colors">
               View Work
               <ArrowDown className="ml-2 h-4 w-4" />
             </button>
             <Button
               variant="outline"
-              className="border-[#6FA2D4]/40 bg-transparent text-white hover:bg-[#6FA2D4]/20 hover:text-white"
+              className="fx-hover-target border-[#6FA2D4]/40 bg-transparent text-white hover:bg-[#6FA2D4]/20 hover:text-white"
               asChild
             >
               <a href="https://github.com/edbajric" target="_blank" rel="noopener noreferrer">
@@ -138,7 +144,7 @@ export function HeroSection() {
             </Button>
             <Button
               variant="outline"
-              className="border-[#6FA2D4]/40 bg-transparent text-white hover:bg-[#6FA2D4]/20 hover:text-white"
+              className="fx-hover-target border-[#6FA2D4]/40 bg-transparent text-white hover:bg-[#6FA2D4]/20 hover:text-white"
               asChild
             >
               <a href="mailto:edina.bajric@outlook.com" target="_blank" rel="noopener noreferrer">

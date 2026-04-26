@@ -45,7 +45,7 @@ export function Navigation() {
         {/* Logo */}
         <a
           href="#"
-          className="text-[#FFF] font-light text-3xl hover:text-[#E6F1FF]"
+          className="fx-hover-target text-[#FFF] font-light text-3xl hover:text-[#E6F1FF]"
           style={{ textShadow: "0 2px 10px rgba(0,0,0,0.4)", fontFamily: "var(--font-indie-flower), cursive" }}
         >
           &lt; EDBAJRIC /&gt;
@@ -58,7 +58,7 @@ export function Navigation() {
               <a
                 href={link.href}
                 onClick={handleNavClick}
-                className="text-[#ECF7FA] hover:text-[#E6F1FF] transition-colors text-sm"
+                className="fx-hover-target text-[#ECF7FA] hover:text-[#E6F1FF] transition-colors text-sm"
                 style={{ fontFamily: "var(--font-indie-flower), cursive" }}
               >
                 {link.name}
@@ -69,7 +69,7 @@ export function Navigation() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#E6F1FF]"
+          className="fx-hover-target md:hidden text-[#E6F1FF]"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -86,7 +86,7 @@ export function Navigation() {
                 <a
                   href={link.href}
                   onClick={handleNavClick}
-                  className="text-[#E6F1FF] hover:text-[#9FC8F2] transition-colors text-lg"
+                  className="fx-hover-target text-[#E6F1FF] hover:text-[#9FC8F2] transition-colors text-lg"
                   style={{ fontFamily: "var(--font-indie-flower), cursive" }}
                 >
                   {link.name}

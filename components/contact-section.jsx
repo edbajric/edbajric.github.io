@@ -38,6 +38,7 @@ export function ContactSection() {
       <div className="mx-auto max-w-4xl">
         <div
           className="mb-16 text-center"
+          data-reveal
         >
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#6FA2D4]">
             Get In Touch
@@ -52,6 +53,7 @@ export function ContactSection() {
 
         <div
           className="flex flex-col items-center gap-6 md:flex-row md:justify-center"
+          data-reveal="scale"
         >
           {links.map((link) => {
             const Icon = link.icon
@@ -61,7 +63,7 @@ export function ContactSection() {
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-3 rounded-lg border border-[#6FA2D4]/50 bg-transparent backdrop-blur-md px-6 py-4 font-serif transition-all hover:border-[#6FA2D4]/80 hover:bg-[#56727B]/20"
+                className="fx-hover-target group flex items-center gap-3 rounded-lg border border-[#6FA2D4]/50 bg-transparent backdrop-blur-md px-6 py-4 font-serif transition-all hover:border-[#6FA2D4]/80 hover:bg-[#56727B]/20"
               >
                 <Icon className="h-5 w-5 text-[#7AA8D4]" />
                 <div>
@@ -78,6 +80,7 @@ export function ContactSection() {
       {/* Footer */}
       <div
         className="mt-24 border-t border-[#56727B]/50 pt-8 text-center"
+        data-reveal
       >
         <p className="text-sm text-[#A4ADAE]">
           Designed & Built by Edina Bajric

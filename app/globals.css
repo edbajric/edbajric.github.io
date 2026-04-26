@@ -3,6 +3,24 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #1e3840;
+  color: #e8eef2;
+}
+
+body.cursor-enhanced {
+  cursor: none;
+}
+
+body.cursor-enhanced a,
+body.cursor-enhanced button,
+body.cursor-enhanced .fx-hover-target,
+body.cursor-enhanced .project-tilt-card,
+body.cursor-enhanced .skill-chip {
+  cursor: none;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -129,6 +147,209 @@ html {
   }
 }
 
+.site-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.34;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.cursor-dot {
+  z-index: 1001;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #6fa2d4;
+}
+
+.cursor-ring {
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(111, 162, 212, 0.55);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+body.cursor-enhanced .cursor-dot,
+body.cursor-enhanced .cursor-ring {
+  opacity: 1;
+}
+
+body.hovering .cursor-ring {
+  width: 58px;
+  height: 58px;
+  background-color: rgba(111, 162, 212, 0.08);
+  border-color: #6fa2d4;
+}
+
+.nav-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  height: 2px;
+  width: 0;
+  background: #6fa2d4;
+  box-shadow: 0 0 12px rgba(111, 162, 212, 0.8);
+  transition: width 0.1s linear;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-reveal="left"] {
+  transform: translateX(-44px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(44px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.9);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.skill-chip {
+  opacity: 0;
+  transform: scale(0.86);
+}
+
+.skill-chip.popped {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.38rem;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(to bottom, #6fa2d4, rgba(111, 162, 212, 0.1));
+  transition: height 1.2s ease 0.2s;
+}
+
+.timeline.animated::before {
+  height: 100%;
+}
+
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: #87aed6;
+  clip-path: polygon(0 0, 100% 0, 100% 38%, 0 38%);
+  transform: translateX(-3px);
+  animation: glitch-1 4s infinite 2s;
+}
+
+.glitch::after {
+  color: #6fa2d4;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translateX(3px);
+  animation: glitch-2 4s infinite 2.1s;
+}
+
+@keyframes glitch-1 {
+  0%,
+  90%,
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  91% {
+    transform: translateX(-4px);
+    opacity: 0.8;
+  }
+  93% {
+    transform: translateX(3px);
+    opacity: 0.6;
+  }
+  95% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-2 {
+  0%,
+  90%,
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  91% {
+    transform: translateX(4px);
+    opacity: 0.8;
+  }
+  93% {
+    transform: translateX(-3px);
+    opacity: 0.6;
+  }
+  95% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e3840;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6fa2d4;
+  border-radius: 2px;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -143,8 +364,27 @@ html {
   }
 }
 
+@media (pointer: coarse), (max-width: 900px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation: none;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    animation: none;
+    opacity: 0;
   }
 }

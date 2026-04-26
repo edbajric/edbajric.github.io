@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Instrument_Serif, Inter, Indie_Flower } from 'next/font/google'
 import { Navigation } from '@/components/navigation'
+import { SiteEffects } from '@/components/site-effects'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -48,6 +49,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${instrumentSerif.variable} ${inter.variable} ${indieFlower.variable} font-sans antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
+        <SiteEffects />
         <Navigation />
         {children}
       </body>

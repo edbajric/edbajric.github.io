@@ -24,11 +24,36 @@ const projects: Project[] = [
     github: "https://github.com/edbajric/SupplementRecsML",
   },
   {
+    title: "EndowherAI – Endometriosis & PCOS Symptom Tracking Platform",
+    description:
+      "Currently working on research-oriented web app for women with endometriosis and PCOS to track cycles, multidimensional symptoms, and remedies over time. Designing an end-to-end ML pipeline on a self-collected, anonymized survey dataset to find patterns in non-pharmacological remedies.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "Supabase",
+      "PostgreSQL",
+      "Machine Learning",
+      "Random Forest",
+      "XGBoost",
+      "JWS-Auth",
+    ],
+    github: "https://github.com/edbajric/EndowherAI",
+  },
+  {
     title: "ROMER Research Internship Projects",
     description:
       "Researched recent LLM and VLA models for robotic perception and automated camera calibration with 3D point cloud generation. Integrated Intel RealSense with ROS2 for real-time object recognition in domestic service robot development.",
     tags: ["Python", "ROS2", "Computer Vision", "Intel RealSense", "Docker"],
     github: "https://github.com/edbajric/ROMER2025",
+  },
+  {
+    title: "IUS Mahala – Student Communication Platform",
+    description:
+      "Developed a full-stack student social platform using Next.js (pages & API routes) and Supabase (PostgreSQL) with normalized database models, CRUD APIs, and secure authentication. Implemented password hashing, JWT/session-based login, and centralized error handling.",
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Full-Stack"],
+    github: "https://github.com/edbajric/IUSMahala",
   },
   {
     title: "edbajric.github.io Portfolio",
@@ -42,7 +67,7 @@ const projects: Project[] = [
     description:
       "Engineered a real-time computer vision system for hand gesture recognition using OpenCV and MediaPipe. Integrated an Arduino-based embedded controller with custom serial communication to reduce end-to-end latency.",
     tags: ["Python", "C++", "OpenCV", "MediaPipe", "Arduino", "Computer Vision"],
-    github: "https://github.com/edbajric/MPProject",
+    github: "https://github.com/edbajric/HandGestureControlRobot",
   },
   {
     title: "Dinero",
@@ -51,13 +76,7 @@ const projects: Project[] = [
     tags: ["React.js", "Next.js", "Node.js", "JavaScript", "MySQL"],
     github: "https://github.com/Adnan-M123/Dinero",
   },
-  {
-    title: "IUS Mahala – Student Communication Platform",
-    description:
-      "Built a React.js and Node.js social platform for my university for sharing academic resources and faculty-based discussion groups.",
-    tags: ["React.js", "Node.js", "Tailwind CSS", "MySQL"],
-    github: "https://github.com/edbajric/ius-mahala",
-  },
+  
 ]
 
 /* ---------------- Card ---------------- */
@@ -65,7 +84,9 @@ const projects: Project[] = [
 function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-lg border border-[#6FA2D4]/30 bg-[#56727B]/10 backdrop-blur-sm p-6
+      data-reveal="scale"
+      data-tilt
+      className={`project-tilt-card fx-hover-target group relative overflow-hidden rounded-lg border border-[#6FA2D4]/30 bg-[#56727B]/10 backdrop-blur-sm p-6
         transition-all duration-500 ease-out
         hover:border-[#6FA2D4]/60 hover:bg-[#56727B]/20
         translate-y-0 opacity-100
@@ -127,10 +148,18 @@ export function ProjectsSection() {
       {/* Color overlay */}
       <div className="absolute inset-0 bg-[#435E66]/70" />
       <div className="mx-auto max-w-6xl relative z-10">
-      
+        <div className="mb-10" data-reveal>
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#6FA2D4]">Selected Work</p>
+          <h2
+            className="text-4xl font-light text-white md:text-5xl"
+            style={{ fontFamily: "var(--font-indie-flower), cursive" }}
+          >
+            Projects
+          </h2>
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.title}
               project={project}

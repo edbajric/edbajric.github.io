@@ -1,15 +1,31 @@
 const skillCategories = [
   {
-    title: "Machine Learning & AI",
-    skills: ["Python", "TensorFlow", "OpenCV", "MediaPipe", "Data Engineering", "Feature Engineering", "Random Forest", "Gradient Boosting", "Cross-Validation", "Model Interpretability"]
-  },
+  title: "Machine Learning & AI",
+  skills: [
+    "Python",
+    "TensorFlow",
+    "scikit-learn",
+    "OpenCV",
+    "MediaPipe",
+    "Data Engineering",
+    "Feature Engineering",
+    "Random Forest",
+    "Gradient Boosting",
+    "XGBoost",
+    "Neural Networks",
+    "Cross-Validation",
+    "Model Interpretability",
+    "Prompt Engineering",
+    "LLMs"
+  ]
+},
   {
     title: "Web Development",
     skills: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS"]
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "MySQL", "REST APIs", "JSON", "Java"]
+    skills: ["Node.js", "Express.js", "PostgreSQL", "REST APIs", "JSON", "Java", "Supabase", "FastAPI"]
   },
   {
     title: "Mobile Development",
@@ -21,7 +37,7 @@ const skillCategories = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git/GitHub", "Agile/Scrum", "VS Code", "Figma", "Canva", "LaTeX"]
+    skills: ["Git/GitHub", "Docker", "Agile/Scrum", "VS Code", "Figma", "Canva", "LaTeX"]
   }
 ]
 
@@ -34,7 +50,7 @@ export default function Skills() {
     >
       <div className="mx-auto max-w-6xl">
         {/* BROKEN TEXT MARQUEE - Full Screen Width */}
-        <div className="mt-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+        <div className="mt-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden" data-reveal>
           <div className="flex whitespace-nowrap animate-marquee">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="relative px-4 md:px-8 flex-shrink-0 cursor-default select-none">
@@ -78,7 +94,7 @@ export default function Skills() {
 
         <div className="mt-30 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category) => (
-            <div key={category.title} className="space-y-4">
+            <div key={category.title} className="space-y-4" data-reveal="left" data-skill-group>
               <h3
                 className="text-2xl font-light text-white"
                 style={{ fontFamily: "var(--font-indie-flower)" }}
@@ -89,7 +105,8 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="rounded-full bg-[#617b80]/30 px-3 py-1 text-xs text-[#E8F0F5]"
+                    data-skill-chip
+                    className="skill-chip rounded-full border border-[#6FA2D4]/30 bg-[#617b80]/30 px-3 py-1 text-xs text-[#E8F0F5] transition-all duration-300"
                   >
                     {skill}
                   </span>

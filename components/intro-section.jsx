@@ -33,12 +33,12 @@ export function IntroSection() {
         <div className="grid grid-cols-1 md:grid-cols-12 items-start">
           
           {/* 1. SVG NAME */}
-          <div className="col-span-full md:col-start-3 md:col-span-4 flex justify-start z-10">
+           <div className="col-span-full md:col-start-3 md:col-span-4 flex justify-start z-10" data-reveal>
              <Image src="/HiImEdina.svg" alt="Hi I'm Edina" width={180} height={30} className="h-auto w-36 md:w-44 brightness-0 invert" priority />
           </div>
 
           {/* 2. POLAROID */}
-          <div className="hidden lg:block md:col-start-10 md:row-start-1 md:row-span-2 relative z-20 rotate-3 self-center">
+          <div className="hidden lg:block md:col-start-10 md:row-start-1 md:row-span-2 relative z-20 rotate-3 self-center" data-reveal="right">
             <div className="bg-[#F5F7FA] p-2 pb-6 shadow-xl w-32 md:w-40">
                <div className="relative aspect-[5/6] w-full">
                  <Image src="/images/IMG_0232.png" alt="Polaroid" fill className="object-cover" />
@@ -48,7 +48,7 @@ export function IntroSection() {
           </div>
 
           {/* 3. TITLE */}
-          <div className="col-span-full md:col-start-1 md:col-span-12 text-center md:row-start-2">
+          <div className="col-span-full md:col-start-1 md:col-span-12 text-center md:row-start-2" data-reveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-thin uppercase leading-tight tracking-wide" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
                 Computer science student,<br />focused on AI, ML & Web Dev
             </h2>
@@ -56,7 +56,7 @@ export function IntroSection() {
 
           {/* 4. CONTENT ROW */}
           {/* Left Side: Updated Font to match Reference */}
-          <div className="col-span-full md:col-span-6 flex flex-col items-end text-right pt-8 md:pr-10 md:row-start-3">
+          <div className="col-span-full md:col-span-6 flex flex-col items-end text-right pt-8 md:pr-10 md:row-start-3" data-reveal="left">
             <p className="text-xs uppercase tracking-[0.2em] text-[#D7E4EC] md:text-sm max-w-[300px] font-sans font-light leading-relaxed">
               I SEE LEARNING AS A RESPONSIBILITY TO CREATE MEANINGFUL SOLUTIONS THAT HELP PEOPLE AND COMMUNITIES.
             </p>
@@ -69,7 +69,7 @@ export function IntroSection() {
           </div>
 
           {/* Right Side */}
-          <div className="col-span-full md:col-start-7 md:col-span-6 flex flex-col items-start text-left pt-8 md:pl-10 md:row-start-3">
+          <div className="col-span-full md:col-start-7 md:col-span-6 flex flex-col items-start text-left pt-8 md:pl-10 md:row-start-3" data-reveal="right">
             <p className="text-sm md:text-base max-w-[300px]" style={{ fontFamily: "var(--font-indie-flower)" }}>
               I'm interested in building ML models for practical problems, and crafting full-stack apps that turn complex ideas into useful products.
               <br /><br />
@@ -79,7 +79,7 @@ export function IntroSection() {
             <a
               href="#contact"
               onClick={handleContactScroll}
-              className="mt-10 inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-25 py-2 text-white transition-colors hover:bg-[#6FA2D4]/20 hover:text-white"
+              className="fx-hover-target mt-10 inline-flex items-center justify-center rounded-md border border-[#6FA2D4]/40 bg-transparent px-25 py-2 text-white transition-colors hover:bg-[#6FA2D4]/20 hover:text-white"
               style={{ fontFamily: "var(--font-indie-flower)" }}
             >
               <Mail className="mr-2 h-4 w-4" />
@@ -93,7 +93,7 @@ export function IntroSection() {
 
 
         {/* BROKEN TEXT MARQUEE - Full Screen Width */}
-        <div className="mt-22 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+        <div className="mt-22 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden" data-reveal>
           <div className="flex whitespace-nowrap animate-marquee">
             
             {[...Array(4)].map((_, i) => (
