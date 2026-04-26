@@ -48,7 +48,7 @@ export function HeroSection() {
         >
           <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-normal leading-none tracking-normal text-white drop-shadow-2xl whitespace-nowrap uppercase" style={{ fontFamily: "var(--font-instrument-serif), serif" }}>
             HI, <span className="italic normal-case">I'm</span>{" "}
-            <span className="glitch" data-text="EDINA">EDINA</span> <span className="text-[#87AED6]"></span>
+            <span>EDINA</span>
           </h1>
         </div>
       </div>
@@ -82,7 +82,7 @@ export function HeroSection() {
             isVisible ? "translate-x-0 translate-y-0 opacity-100" : "-translate-x-20 translate-y-10 opacity-0"
           }`}>
           <p className="text-sm md:text-base text-white mt-[-10px] uppercase tracking-wide absolute -top-3 -right-20 whitespace-nowrap" style={{ fontFamily: "var(--font-indie-flower), cursive" }}>
-            Focused on AI & ML
+            AI & ML
           </p>
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none" style={{ transform: "scaleX(-1)" }}>
            <g transform="rotate(-100, 50, 50)">
@@ -113,6 +113,26 @@ export function HeroSection() {
             Web & app development
           </p>
         </div>
+
+
+        {/* Bottom Right Arrow - R&D */}
+        <div className={`absolute bottom-[22%] left-[8%] md:left-[65%] transition-all duration-1000 ease-out ${
+            isVisible ? "translate-x-0 translate-y-0 opacity-100" : "translate-x-20 -translate-y-10 opacity-0"
+          }`}>
+           
+          <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+            <g transform="rotate(260, 50, 50)">
+              <path d="M15 75C30 75 56 70 75 25" 
+                    stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M62 28L75 25L80 38" 
+                    stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </g>
+          </svg>
+         <p className="text-sm md:text-base text-white uppercase tracking-wide whitespace-nowrap absolute  left-20" style={{ fontFamily: "var(--font-indie-flower), cursive" }}>
+            Research & Development
+          </p>
+        </div>
+
       </div>
 
       {/* Content Below - Outside Hero */}

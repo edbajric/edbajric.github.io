@@ -41,6 +41,7 @@ const certificates = [
     title: "Machine Learning A-Z: Hands-On Python & R in Data Science",
     issuer: "Udemy",
     issued: "Issued Mar 2026",
+    credentialUrl: "https://www.udemy.com/certificate/UC-fde4b68a-6c80-4322-b083-0adfc3fe1727/",
     skills: [
       "Machine Learning",
       "Supervised Learning",
@@ -58,22 +59,7 @@ const certificates = [
       "Support Vector Machine (SVM)",
       "K-Nearest Neighbors (KNN)",
     ],
-  },
-  {
-    title: "FastAPI - The Complete Course (Beginner + Advanced)",
-    issuer: "Udemy",
-    issued: "In progress",
-  },
-  {
-    title: "The Complete Web Development Bootcamp",
-    issuer: "Udemy",
-    issued: "In progress",
-  },
-  {
-    title: "Large Language Model (LLM) Course",
-    issuer: "Hugging Face",
-    issued: "In progress",
-  },
+  }
 ];
 
 export function ExperienceSection() {
@@ -97,9 +83,10 @@ export function ExperienceSection() {
           </h2>
         </div>
         
-        <div className="timeline space-y-12" data-timeline>
+        <div className="relative space-y-12">
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-[#7AA8D4]/30" />
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item relative pl-8 border-l border-[#7AA8D4]/30" data-timeline-item>
+            <div key={index} className="relative pl-8" data-reveal="left">
               <div className="absolute left-0 top-0 w-3 h-3 -translate-x-1.5 bg-[#7AA8D4] rounded-full" />
               <div className="space-y-3">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
@@ -174,7 +161,7 @@ export function ExperienceSection() {
             </div>
           </div>
 
-          <div data-reveal="right">
+          <div data-reveal="left">
             <h3
               className="mb-8 text-2xl font-light text-white md:text-3xl"
               style={{ fontFamily: "var(--font-indie-flower), cursive" }}
@@ -194,6 +181,16 @@ export function ExperienceSection() {
                       </p>
                       <p className="text-[#7AA8D4] text-sm">{certificate.issuer}</p>
                       <p className="text-[#A4ADAE] text-sm">{certificate.issued}</p>
+                      {certificate.credentialUrl ? (
+                        <a
+                          href={certificate.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-sm text-[#87AED6] underline-offset-4 hover:underline"
+                        >
+                          View Credential
+                        </a>
+                      ) : null}
 
                       {certificate.skills ? (
                         <div className="pt-2">
